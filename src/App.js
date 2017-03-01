@@ -102,6 +102,7 @@ class App extends Component {
     :
       <div>
         <BasicInfo data={this.state.userData} />
+        <h3>Repositories</h3>
         <Repositories data={this.state.userRepos} />
       </div>
     ;
@@ -110,7 +111,7 @@ class App extends Component {
         <Search  handleSearch={this.handleSearch}/>
         {
           this.state.loading &&
-          <i>Loading ....</i>
+          <i>Searching ....</i>
         }
         { displayGithubProfile }
         

@@ -4,16 +4,18 @@ class Repositories extends Component {
   render() {
     let list_repo = (this.props.data !== '') ?
       this.props.data.map((repo) => {
-        return <li key={repo.id}>name: {repo.name} -- {repo.description} -- {repo.homepage} -- {repo.html_url}</li>
+        return <li className="ListRepo__item" key={repo.id}>
+          <strong><a href={repo.html_url} target="_blank">{repo.name}:</a></strong> <i>{repo.description}</i>
+        </li>
       })
     :
       null 
     ;
 
     return (
-      <div>
+      <ul className="ListRepo">
         {list_repo}
-      </div>
+      </ul>
     );
   }
 }
